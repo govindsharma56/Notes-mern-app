@@ -74,7 +74,7 @@ const CreateNote = () => {
             type="submit"
             className="px-6 py-2 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-md shadow-md transition"
           >
-            Update Note
+            Create Note
           </button>
         </form>
         </div>
