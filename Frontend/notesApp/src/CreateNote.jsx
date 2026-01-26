@@ -8,13 +8,14 @@ const CreateNote = () => {
   const [Description,setDescription]=useState('');
   const navigate=useNavigate();
   const handleSubmit=async(e)=>{
+    console.log(import.meta.env.VITE_BACKEND_URL);
     e.preventDefault();
        if(!Title.trim() || !Description.trim()){
          toast.error('all field required');
          return;
        }
        try {
-           const res=await fetch('http://localhost:5001/api/route/create',{
+           const res=await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/route/create`,{
                   method:"POST",
                   headers:{
                     'Content-Type':'application/json'

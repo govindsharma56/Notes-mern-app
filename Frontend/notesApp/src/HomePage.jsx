@@ -11,7 +11,7 @@ const[Note,setNotes]=useState([]);
  
      const handleNote=async(id)=>{
         try {
-             const res=await fetch(`http://localhost:5001/api/route/delete/${id}`,{
+             const res=await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/route/delete/${id}`,{
               method:"DELETE",
              })
              const data = await res.json();
@@ -27,7 +27,7 @@ const[Note,setNotes]=useState([]);
      }
   const fetchNotes = async()=>{
         try{
-            const  res=await fetch("http://localhost:5001/api/route/read");
+            const  res=await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/route/read`);
             const data=await res.json();
             setNotes(data);
             console.log(data);
@@ -35,12 +35,7 @@ const[Note,setNotes]=useState([]);
           console.log(error,"error fetching notes");
         }
   }
-  const handleUpdate=async(id)=>{
-    const res=await fetch(`http://localhost:5001/api/route/update/${id}`,{
-        method:'UPDATE',
-    })
-
-  }
+  
 
   useEffect(()=>{
     fetchNotes();

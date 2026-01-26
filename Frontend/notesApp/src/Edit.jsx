@@ -35,7 +35,7 @@ const Edit = () => {
   const handleUpdate = async (e) => {
     e.preventDefault();
     try {
-      const res = await fetch(`http://localhost:5001/api/route/update/${id}`, {
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/route/update/${id}`, {
         method: "PUT", // backend update method
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, description }),
