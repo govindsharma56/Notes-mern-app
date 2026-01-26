@@ -12,7 +12,7 @@ const Edit = () => {
   // Fetch all notes and prefill the form for this id
   const fetchNote = async () => {
     try {
-      const res = await fetch("http://localhost:5001/api/route/read");
+      const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/route/read`);
       const data = await res.json(); // all notes
       const note = data.find((note) => note._id === id); // find note by id
       if (note) {
