@@ -38,6 +38,7 @@ const[Note,setNotes]=useState([]);
   
 
   useEffect(()=>{
+    
     fetchNotes();
   },[])
 
